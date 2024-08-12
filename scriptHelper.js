@@ -3,18 +3,6 @@
 require("cross-fetch/polyfill");
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
-    // Here is the HTML formatting for our mission target div.
-    /*
-                 <h2>Mission Destination</h2>
-                 <ol>
-                     <li>Name: </li>
-                     <li>Diameter: </li>
-                     <li>Star: ${star}</li>
-                     <li>Distance from Earth: </li>
-                     <li>Number of Moons: </li>
-                 </ol>
-                 <img src="">
-    */
     let missionTarget = document.getElementById("missionTarget");
     missionTarget.innerHTML = `<h2>Mission Destination</h2>
     <ol>
@@ -78,7 +66,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         launchStatus.style.color = "red";
         fuelStatus.innerHTML = "Fuel level too low for launch";
         cargoStatus.innerHTML = "Cargo mass too heavy for launch";
-    } else {
+    } else if (validateInput(fuelLevel.value) === "Is a Number" || validateInput(cargoLevel.value) === "Is a Number") {
         launchStatus.innerHTML = "Shuttle is Ready for Launch";
         launchStatus.style.color = "green";
         cargoStatus.innerHTML = "Cargo mass low enough for launch";
