@@ -31,8 +31,10 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let fuelStatus = document.getElementById("fuelStatus");
     let cargoStatus = document.getElementById("cargoStatus");
     let launchStatus = document.getElementById("launchStatus");
+
     pilotStatus.innerHTML = `Pilot ${pilot.value} is ready for launch`;
     copilotStatus.innerHTML = `Co-pilot ${copilot.value} is ready for launch`;
+
     if (
         validateInput(pilot.value) === "Empty" ||
         validateInput(copilot.value) === "Empty" ||
