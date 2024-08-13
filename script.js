@@ -8,6 +8,7 @@ window.addEventListener("load", function () {
     let copilotName = document.getElementsByName("copilotName")[0];
     let fuelLevel = document.getElementsByName("fuelLevel")[0];
     let cargoMass = document.getElementsByName("cargoMass")[0];
+    faultyItems.style.visibility = "hidden";
 
     submit.addEventListener("click", function (event) {
         formSubmission(document, faultyItems, pilotName, copilotName, fuelLevel, cargoMass);
